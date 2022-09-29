@@ -1,0 +1,734 @@
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta property='og:site_name' content='Countdown Exam - IX-14'/>
+        <meta property='og:type' content='website'/>
+        <meta property='og:image' content='https://ix14.netlify.app/a/card.png'/>
+        <meta property='og:image:type' content='image/png'/>
+        <meta property='og:image:width' content='1280'/>
+        <meta property='og:image:height' content='800'/>
+        <meta property='twitter:card' content='summary_large_image' />
+
+        <!--=============== FAVICON ===============-->
+        <link rel='shortcut icon' href='https://ix14.netlify.app/a/icon.png' type='image/x-icon'>
+
+        <!--=============== Fonts ===============-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nabla:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+        <!--=============== TITLE ===============-->
+        <title>Countdown Exam - IX-14</title> 
+  </head>
+<body>
+  <style>
+    html, body {
+      background-color: #fff;
+      color: #636b6f;
+      font-family: "Baloo 2";
+      font-weight: 100;
+      height: 99vh;
+      margin: 10;
+    }
+
+    .ix-14 {
+      font-family: "Nabla"
+    }
+
+    .full-height {
+      height: 99vh;
+    }
+
+    .flex-center {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .position-ref {
+      position: relative;
+    }
+
+    .top-right {
+      position: absolute;
+      right: 10px;
+      top: 18px;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 64px;
+    }
+
+    .links > a {
+      color: #636b6f;
+      padding: 0 25px;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: .1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .m-b-md {
+      margin-bottom: 30px;
+    }
+    
+    #clockdiv{
+      display: inline-block;
+      font-weight: 200;
+      text-align: center;
+      font-size: 30px;
+    }
+    
+    #clockdiv > div{
+      padding: 10px;
+      border-radius: 3px;
+      background: #ffffff;
+      display: inline-block;
+    
+    }
+        
+    #clockdiv div > span{
+      border-radius: 3px;
+      background: #ffffff;
+      display: inline-block;
+    }
+
+    .clockdiv{
+      font-size: medium;
+    }
+        
+    .smalltext{
+      padding-top: 4px;
+      font-size: 20px;
+    }
+
+    .end-teks{
+      font-size: medium;
+    }
+
+    .credits {
+            position: fixed;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            padding: 15px;
+            text-align: right;
+            font-size: 13px;
+            color: rgb(0, 0, 0);
+            z-index: 999999;
+        }
+        .credits a {
+            color: #000000;
+            transition: 0.3s;
+        }
+        .credits a:hover {
+            color: rgb(0, 0, 0);
+        }
+  </style>
+<body>
+  <div class="container" style="padding-top: 10px">
+    <div class='content'>
+      <div class='title m-b-md'>
+        <h1 class="ix-14">IX-14</h1>
+        <h6>Countdown: <b>Awal Ujian, Matematika, Biologi, Bahasa Inggris, Fisika, Ekonomi, Akhir Ujian</b></h6>
+        <hr>
+
+        <!--=== Awal Ujian ===-->
+        <div class='clockdiv' id='clockdiv'>
+          <p>Awal Ujian</p>
+          <div>
+              <span class='days' id='day'></span>
+              <div class='smalltext'>Hari</div>
+          </div>
+          <div>
+              <span class='hours' id='hour'></span>
+              <div class='smalltext'>Jam</div>
+          </div>
+          <div>
+              <span class='minutes' id='minute'></span>
+              <div class='smalltext'>Menit</div>
+          </div>
+          <div>
+              <span class='seconds' id='second'></span>
+              <div class='smalltext'>Detik</div>
+          </div>
+          <center>
+            <p class='end-teks' id='mulai'></p>
+          </center>
+          </div>
+
+          <script>
+          const awalUjian = new Date('october 03, 2022 07:59:59').getTime();
+          var x = setInterval(function() {
+          var now = new Date().getTime();
+          var t = awalUjian - now;
+          var days = Math.floor(t / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+          var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((t % (1000 * 60)) / 1000);
+          document.getElementById('day').innerHTML = days;
+          document.getElementById('hour').innerHTML = hours;
+          document.getElementById('minute').innerHTML = minutes;
+          document.getElementById('second').innerHTML = seconds;
+          if (t < 0) {
+                  clearInterval(x);
+                  document.getElementById('mulai').innerHTML = 'COUNTDOWN DAH BERAKHIR, DO YOUR BEST!';
+                  document.getElementById('day').innerHTML ='0';
+                  document.getElementById('hour').innerHTML ='0';
+                  document.getElementById('minute').innerHTML ='0' ;
+                  document.getElementById('second').innerHTML = '0'; }
+          }, 1000);
+          </script>
+      <hr>
+
+      <!--=== Matematika ===-->
+      <div class='clockdiv' id='clockdiv'>
+        <p>Matematika</p>
+        <h6>AWAL</h6>
+        <div>
+            <span class='days' id='daym'></span>
+            <div class='smalltext'>Hari</div>
+        </div>
+        <div>
+            <span class='hours' id='hourm'></span>
+            <div class='smalltext'>Jam</div>
+        </div>
+        <div>
+            <span class='minutes' id='minutem'></span>
+            <div class='smalltext'>Menit</div>
+        </div>
+        <div>
+            <span class='seconds' id='secondm'></span>
+            <div class='smalltext'>Detik</div>
+        </div>
+        <center>
+          <p class='end-teks' id='mulaim'></p>
+        </center>
+
+        <script>
+        const mtk = new Date('october 03, 2022 07:59:59').getTime();
+        var xy = setInterval(function() {
+        var nowm = new Date().getTime();
+        var tm = mtk - nowm;
+        var daysm = Math.floor(tm / (1000 * 60 * 60 * 24));
+        var hoursm = Math.floor((tm %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+        var minutesm = Math.floor((tm % (1000 * 60 * 60)) / (1000 * 60));
+        var secondsm = Math.floor((tm % (1000 * 60)) / 1000);
+        document.getElementById('daym').innerHTML = daysm;
+        document.getElementById('hourm').innerHTML = hoursm;
+        document.getElementById('minutem').innerHTML = minutesm;
+        document.getElementById('secondm').innerHTML = secondsm;
+        if (tm < 0) {
+                clearInterval(xy);
+                document.getElementById('mulaim').innerHTML = 'UJIAN MATEMATIKA DAH MULAI, 加油!';
+                document.getElementById('daym').innerHTML ='0';
+                document.getElementById('hourm').innerHTML ='0';
+                document.getElementById('minutem').innerHTML ='0' ;
+                document.getElementById('secondm').innerHTML = '0'; }
+        }, 1000);
+        </script>
+
+
+      <div class='clockdiv' id='clockdiv'>
+        <h6>AKHIR</h6>
+        <div>
+            <span class='days' id='dayma'></span>
+            <div class='smalltext'>Hari</div>
+        </div>
+        <div>
+            <span class='hours' id='hourma'></span>
+            <div class='smalltext'>Jam</div>
+        </div>
+        <div>
+            <span class='minutes' id='minutema'></span>
+            <div class='smalltext'>Menit</div>
+        </div>
+        <div>
+            <span class='seconds' id='secondma'></span>
+            <div class='smalltext'>Detik</div>
+        </div>
+        <center>
+          <p class='end-teks' id='mulaima'></p>
+        </center>
+        </div>
+
+        <script>
+        const mtka = new Date('october 03, 2022 09:29:59').getTime();
+        var xya = setInterval(function() {
+        var nowma = new Date().getTime();
+        var tma = mtka - nowma;
+        var daysma = Math.floor(tma / (1000 * 60 * 60 * 24));
+        var hoursma = Math.floor((tma %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+        var minutesma = Math.floor((tma % (1000 * 60 * 60)) / (1000 * 60));
+        var secondsma = Math.floor((tma % (1000 * 60)) / 1000);
+        document.getElementById('dayma').innerHTML = daysma;
+        document.getElementById('hourma').innerHTML = hoursma;
+        document.getElementById('minutema').innerHTML = minutesma;
+        document.getElementById('secondma').innerHTML = secondsma;
+        if (tma < 0) {
+                clearInterval(xya);
+                document.getElementById('mulaima').innerHTML = 'UJIAN MATEMATIKA DAH BERAKHIR!';
+                document.getElementById('dayma').innerHTML ='0';
+                document.getElementById('hourma').innerHTML ='0';
+                document.getElementById('minutema').innerHTML ='0' ;
+                document.getElementById('secondma').innerHTML = '0'; }
+        }, 1000);
+        </script>
+      </div>
+      <hr>
+
+    <!----== Biologi ===-->
+    <div class='clockdiv' id='clockdiv'>
+      <p>Biologi</p>
+      <h6>AWAL</h6>
+      <div>
+          <span class='days' id='dayb'></span>
+          <div class='smalltext'>Hari</div>
+      </div>
+      <div>
+          <span class='hours' id='hourb'></span>
+          <div class='smalltext'>Jam</div>
+      </div>
+      <div>
+          <span class='minutes' id='minuteb'></span>
+          <div class='smalltext'>Menit</div>
+      </div>
+      <div>
+          <span class='seconds' id='secondb'></span>
+          <div class='smalltext'>Detik</div>
+      </div>
+      <center>
+        <p class='end-teks' id='mulaib'></p>
+      </center>
+
+      <script>
+      const bio = new Date('october 04, 2022 07:59:59').getTime();
+      var xb = setInterval(function() {
+      var nowb = new Date().getTime();
+      var tb = bio - nowb;
+      var daysb = Math.floor(tb / (1000 * 60 * 60 * 24));
+      var hoursb = Math.floor((tb %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var minutesb = Math.floor((tb % (1000 * 60 * 60)) / (1000 * 60));
+      var secondsb = Math.floor((tb % (1000 * 60)) / 1000);
+      document.getElementById('dayb').innerHTML = daysb;
+      document.getElementById('hourb').innerHTML = hoursb;
+      document.getElementById('minuteb').innerHTML = minutesb;
+      document.getElementById('secondb').innerHTML = secondsb;
+      if (tb < 0) {
+              clearInterval(xb);
+              document.getElementById('mulaib').innerHTML = 'UJIAN BIOLOGI DAH MULAI, 加油!';
+              document.getElementById('dayb').innerHTML ='0';
+              document.getElementById('hourb').innerHTML ='0';
+              document.getElementById('minuteb').innerHTML ='0' ;
+              document.getElementById('secondb').innerHTML = '0'; }
+      }, 1000);
+      </script>
+
+
+    <div class='clockdiv' id='clockdiv'>
+      <h6>AKHIR</h6>
+      <div>
+        <span class='days' id='dayba'></span>
+        <div class='smalltext'>Hari</div>
+    </div>
+    <div>
+        <span class='hours' id='hourba'></span>
+        <div class='smalltext'>Jam</div>
+    </div>
+    <div>
+        <span class='minutes' id='minuteba'></span>
+        <div class='smalltext'>Menit</div>
+    </div>
+    <div>
+        <span class='seconds' id='secondba'></span>
+        <div class='smalltext'>Detik</div>
+    </div>
+    <center>
+      <p class='end-teks' id='mulaib'></p>
+    </center>
+    </div>
+
+    <script>
+    const bioa = new Date('october 04, 2022 09:29:59').getTime();
+    var xba = setInterval(function() {
+    var nowba = new Date().getTime();
+    var tba = bioa - nowba;
+    var daysba = Math.floor(tba / (1000 * 60 * 60 * 24));
+    var hoursba = Math.floor((tba %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutesba = Math.floor((tba % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsba = Math.floor((tba % (1000 * 60)) / 1000);
+    document.getElementById('dayba').innerHTML = daysba;
+    document.getElementById('hourba').innerHTML = hoursba;
+    document.getElementById('minuteba').innerHTML = minutesba;
+    document.getElementById('secondba').innerHTML = secondsba;
+    if (tb < 0) {
+            clearInterval(xba);
+            document.getElementById('mulaiba').innerHTML = 'UJIAN BIOLOGI DAH BERAKHIR!';
+            document.getElementById('dayba').innerHTML ='0';
+            document.getElementById('hourba').innerHTML ='0';
+            document.getElementById('minuteba').innerHTML ='0' ;
+            document.getElementById('secondba').innerHTML = '0'; }
+    }, 1000);
+    </script>
+    </div>
+    <hr>
+
+    <!--== B.eng ==-->
+    <div class='clockdiv' id='clockdiv'>
+      <p>Bahasa Inggris</p>
+      <h6>AWAL</h6>
+      <div>
+          <span class='days' id='daye'></span>
+          <div class='smalltext'>Hari</div>
+      </div>
+      <div>
+          <span class='hours' id='houre'></span>
+          <div class='smalltext'>Jam</div>
+      </div>
+      <div>
+          <span class='minutes' id='minutee'></span>
+          <div class='smalltext'>Menit</div>
+      </div>
+      <div>
+          <span class='seconds' id='seconde'></span>
+          <div class='smalltext'>Detik</div>
+      </div>
+      <center>
+        <p class='end-teks' id='mulaie'></p>
+      </center>
+
+      <script>
+      const eng = new Date('october 05, 2022 07:59:59').getTime();
+      var xe = setInterval(function() {
+      var nowe = new Date().getTime();
+      var te = eng - nowe;
+      var dayse = Math.floor(te / (1000 * 60 * 60 * 24));
+      var hourse = Math.floor((te %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var minutese = Math.floor((te % (1000 * 60 * 60)) / (1000 * 60));
+      var secondse = Math.floor((te % (1000 * 60)) / 1000);
+      document.getElementById('daye').innerHTML = dayse;
+      document.getElementById('houre').innerHTML = hourse;
+      document.getElementById('minutee').innerHTML = minutese;
+      document.getElementById('seconde').innerHTML = secondse;
+      if (te< 0) {
+              clearInterval(xe);
+              document.getElementById('mulaie').innerHTML = 'UJIAN B.INGGRIS DAH MULAI, 加油!';
+              document.getElementById('daye').innerHTML ='0';
+              document.getElementById('houre').innerHTML ='0';
+              document.getElementById('minutee').innerHTML ='0' ;
+              document.getElementById('seconde').innerHTML = '0'; }
+      }, 1000);
+      </script>
+
+
+    <div class='clockdiv' id='clockdiv'>
+      <h6>AKHIR</h6>
+      <div>
+        <span class='days' id='dayea'></span>
+        <div class='smalltext'>Hari</div>
+    </div>
+    <div>
+        <span class='hours' id='hourea'></span>
+        <div class='smalltext'>Jam</div>
+    </div>
+    <div>
+        <span class='minutes' id='minuteea'></span>
+        <div class='smalltext'>Menit</div>
+    </div>
+    <div>
+        <span class='seconds' id='secondea'></span>
+        <div class='smalltext'>Detik</div>
+    </div>
+    <center>
+      <p class='end-teks' id='mulaiea'></p>
+    </center>
+    </div>
+
+    <script>
+    const enga = new Date('october 05, 2022 09:29:59').getTime();
+    var xea = setInterval(function() {
+    var nowea = new Date().getTime();
+    var tea = enga - nowea;
+    var daysea = Math.floor(tea / (1000 * 60 * 60 * 24));
+    var hoursea = Math.floor((tea %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutesea = Math.floor((tea % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsea = Math.floor((tea % (1000 * 60)) / 1000);
+    document.getElementById('dayea').innerHTML = daysea;
+    document.getElementById('hourea').innerHTML = hoursea;
+    document.getElementById('minuteea').innerHTML = minutesea;
+    document.getElementById('secondea').innerHTML = secondsea;
+    if (tea < 0) {
+            clearInterval(xea);
+            document.getElementById('mulaiea').innerHTML = 'UJIAN B.INGGRIS DAH BERAKHIR!';
+            document.getElementById('dayea').innerHTML ='0';
+            document.getElementById('hourea').innerHTML ='0';
+            document.getElementById('minuteea').innerHTML ='0' ;
+            document.getElementById('secondea').innerHTML = '0'; }
+    }, 1000);
+    </script>
+    </div>
+    <hr>
+
+    <!----== Fisika ===-->
+    <div class='clockdiv' id='clockdiv'>
+      <p>Fisika</p>
+      <h6>AWAL</h6>
+      <div>
+          <span class='days' id='dayf'></span>
+          <div class='smalltext'>Hari</div>
+      </div>
+      <div>
+          <span class='hours' id='hourf'></span>
+          <div class='smalltext'>Jam</div>
+      </div>
+      <div>
+          <span class='minutes' id='minutef'></span>
+          <div class='smalltext'>Menit</div>
+      </div>
+      <div>
+          <span class='seconds' id='secondf'></span>
+          <div class='smalltext'>Detik</div>
+      </div>
+      <center>
+        <p class='end-teks' id='mulaif'></p>
+      </center>
+
+      <script>
+      const fis = new Date('october 06, 2022 07:59:59').getTime();
+      var xf = setInterval(function() {
+      var nowf = new Date().getTime();
+      var tf = fis - nowf;
+      var daysf = Math.floor(tf / (1000 * 60 * 60 * 24));
+      var hoursf = Math.floor((tf %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var minutesf = Math.floor((tf % (1000 * 60 * 60)) / (1000 * 60));
+      var secondsf = Math.floor((tf % (1000 * 60)) / 1000);
+      document.getElementById('dayf').innerHTML = daysf;
+      document.getElementById('hourf').innerHTML = hoursf;
+      document.getElementById('minutef').innerHTML = minutesf;
+      document.getElementById('secondf').innerHTML = secondsf;
+      if (tf < 0) {
+              clearInterval(xf);
+              document.getElementById('mulaif').innerHTML = 'UJIAN FISIKA DAH MULAI, 加油!';
+              document.getElementById('dayf').innerHTML ='0';
+              document.getElementById('hourf').innerHTML ='0';
+              document.getElementById('minutef').innerHTML ='0' ;
+              document.getElementById('secondf').innerHTML = '0'; }
+      }, 1000);
+      </script>
+
+
+    <div class='clockdiv' id='clockdiv'>
+      <h6>AKHIR</h6>
+    <div>
+        <span class='days' id='dayfa'></span>
+        <div class='smalltext'>Hari</div>
+    </div>
+    <div>
+        <span class='hours' id='hourfa'></span>
+        <div class='smalltext'>Jam</div>
+    </div>
+    <div>
+        <span class='minutes' id='minutefa'></span>
+        <div class='smalltext'>Menit</div>
+    </div>
+    <div>
+        <span class='seconds' id='secondfa'></span>
+        <div class='smalltext'>Detik</div>
+    </div>
+    <center>
+      <p class='end-teks' id='mulaifa'></p>
+    </center>
+    </div>
+
+    <script>
+    const fisa = new Date('october 06, 2022 09:29:59').getTime();
+    var xfa = setInterval(function() {
+    var nowfa = new Date().getTime();
+    var tfa = fisa - nowfa;
+    var daysfa = Math.floor(tfa / (1000 * 60 * 60 * 24));
+    var hoursfa = Math.floor((tfa %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutesfa = Math.floor((tfa % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsfa = Math.floor((tfa % (1000 * 60)) / 1000);
+    document.getElementById('dayfa').innerHTML = daysfa;
+    document.getElementById('hourfa').innerHTML = hoursfa;
+    document.getElementById('minutefa').innerHTML = minutesfa;
+    document.getElementById('secondfa').innerHTML = secondsfa;
+    if (tfa < 0) {
+            clearInterval(xfa);
+            document.getElementById('mulaifa').innerHTML = 'UJIAN FISIKA DAH BERAKHIR!';
+            document.getElementById('dayfa').innerHTML ='0';
+            document.getElementById('hourfa').innerHTML ='0';
+            document.getElementById('minutefa').innerHTML ='0' ;
+            document.getElementById('secondfa').innerHTML = '0'; }
+    }, 1000);
+    </script>
+    </div>
+    <hr>
+
+    <!--== Ekonomi ==-->
+    <div class='clockdiv' id='clockdiv'>
+      <p>Ekonomi</p>
+      <h6>AWAL</h6>
+      <div>
+          <span class='days' id='dayi'></span>
+          <div class='smalltext'>Hari</div>
+      </div>
+      <div>
+          <span class='hours' id='houri'></span>
+          <div class='smalltext'>Jam</div>
+      </div>
+      <div>
+          <span class='minutes' id='minutei'></span>
+          <div class='smalltext'>Menit</div>
+      </div>
+      <div>
+          <span class='seconds' id='secondi'></span>
+          <div class='smalltext'>Detik</div>
+      </div>
+      <center>
+        <p class='end-teks' id='mulaii'></p>
+      </center>
+
+      <script>
+      const eko = new Date('october 07, 2022 07:59:59').getTime();
+      var xi = setInterval(function() {
+      var nowi = new Date().getTime();
+      var ti = eko - nowi;
+      var daysi = Math.floor(ti / (1000 * 60 * 60 * 24));
+      var hoursi = Math.floor((ti %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var minutesi = Math.floor((ti % (1000 * 60 * 60)) / (1000 * 60));
+      var secondsi = Math.floor((ti % (1000 * 60)) / 1000);
+      document.getElementById('dayi').innerHTML = daysi;
+      document.getElementById('houri').innerHTML = hoursi;
+      document.getElementById('minutei').innerHTML = minutesi;
+      document.getElementById('secondi').innerHTML = secondsi;
+      if (ti < 0) {
+              clearInterval(xi);
+              document.getElementById('mulaii').innerHTML = 'UJIAN EKONOMI DAH MULAI, 加油!';
+              document.getElementById('dayi').innerHTML ='0';
+              document.getElementById('houri').innerHTML ='0';
+              document.getElementById('minutei').innerHTML ='0' ;
+              document.getElementById('secondi').innerHTML = '0'; }
+      }, 1000);
+      </script>
+
+    <div class='clockdiv' id='clockdiv'>
+      <h6>AKHIR</h6>
+      <div>
+          <span class='days' id='dayia'></span>
+          <div class='smalltext'>Hari</div>
+      </div>
+      <div>
+          <span class='hours' id='houria'></span>
+          <div class='smalltext'>Jam</div>
+      </div>
+      <div>
+          <span class='minutes' id='minuteia'></span>
+          <div class='smalltext'>Menit</div>
+      </div>
+      <div>
+          <span class='seconds' id='secondia'></span>
+          <div class='smalltext'>Detik</div>
+      </div>
+      <center>
+        <p class='end-teks' id='mulaiia'></p>
+      </center>
+    </div>
+
+      <script>
+      const ekoa = new Date('october 07, 2022 09:29:59').getTime();
+      var xia = setInterval(function() {
+      var nowia = new Date().getTime();
+      var tia = ekoa - nowia;
+      var daysia = Math.floor(tia / (1000 * 60 * 60 * 24));
+      var hoursia = Math.floor((tia %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var minutesia = Math.floor((tia % (1000 * 60 * 60)) / (1000 * 60));
+      var secondsia = Math.floor((tia % (1000 * 60)) / 1000);
+      document.getElementById('dayia').innerHTML = daysia;
+      document.getElementById('houria').innerHTML = hoursia;
+      document.getElementById('minuteia').innerHTML = minutesia;
+      document.getElementById('secondia').innerHTML = secondsia;
+      if (tia < 0) {
+              clearInterval(xia);
+              document.getElementById('mulaiia').innerHTML = 'UJIAN EKONOMI DAH BERAKHIR!';
+              document.getElementById('dayia').innerHTML ='0';
+              document.getElementById('houria').innerHTML ='0';
+              document.getElementById('minuteia').innerHTML ='0' ;
+              document.getElementById('secondia').innerHTML = '0'; }
+      }, 1000);
+      </script>
+    </div>
+    <hr>
+
+    <!--== Akhir Ujian ==-->
+    <div class='clockdiv' id='clockdiv'>
+      <p>Akhir Ujian</p>
+      <div>
+          <span class='days' id='dayiae'></span>
+          <div class='smalltext'>Hari</div>
+      </div>
+      <div>
+          <span class='hours' id='houriae'></span>
+          <div class='smalltext'>Jam</div>
+      </div>
+      <div>
+          <span class='minutes' id='minuteiae'></span>
+          <div class='smalltext'>Menit</div>
+      </div>
+      <div>
+          <span class='seconds' id='secondiae'></span>
+          <div class='smalltext'>Detik</div>
+      </div>
+      <center>
+        <p class='end-teks' id='mulaiiae'></p>
+      </center>
+    </div>
+
+      <script>
+      const ekoae = new Date('october 07, 2022 09:29:59').getTime();
+      var xiae = setInterval(function() {
+      var nowiae = new Date().getTime();
+      var tiae = ekoae - nowiae;
+      var daysiae = Math.floor(tiae / (1000 * 60 * 60 * 24));
+      var hoursiae = Math.floor((tiae %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var minutesiae = Math.floor((tiae % (1000 * 60 * 60)) / (1000 * 60));
+      var secondsiae = Math.floor((tiae % (1000 * 60)) / 1000);
+      document.getElementById('dayiae').innerHTML = daysiae;
+      document.getElementById('houriae').innerHTML = hoursiae;
+      document.getElementById('minuteiae').innerHTML = minutesiae;
+      document.getElementById('secondiae').innerHTML = secondsiae;
+      if (tia < 0) {
+              clearInterval(xia);
+              document.getElementById('mulaiiae').innerHTML = 'COUNTDOWN DAH BERAKHIR, CONGRATS TO ALL! 🎉🎉';
+              document.getElementById('dayiae').innerHTML ='0';
+              document.getElementById('houriae').innerHTML ='0';
+              document.getElementById('minuteiae').innerHTML ='0' ;
+              document.getElementById('secondiae').innerHTML = '0'; }
+      }, 1000);
+      </script>
+
+    <div class="credits">
+      Dev by <a href="https://discordapp.com/users/759331054413938710/">Oxa</a> <img src='https://kkun.netlify.app/a/love.png' height='40'>
+    </div>
+
+      <!--=============== SCRIPT ===============-->
+      <script type='text/javascript'>
+        if (typeof document.onselectstart!='undefined') {
+            document.onselectstart=new Function ('return false');
+        }
+        else{
+            document.onmousedown=new Function ('return false');
+            document.onmouseup=new Function ('return true');
+        }
+      </script>
+</body>
+</html>
