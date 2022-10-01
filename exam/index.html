@@ -17,6 +17,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@300;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nabla:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@300;400;700&display=swap" rel="stylesheet">
 
         <!--=============== CSS ===============-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -116,6 +117,7 @@
     }
 
     .credits {
+            font-family: "Abril Fatface";
             position: fixed;
             right: 0;
             left: 0;
@@ -259,7 +261,6 @@
         <center>
           <p class='end-teks' id='mulaima'></p>
         </center>
-        </div>
 
         <script>
         const mtka = new Date('october 03, 2022 09:29:59').getTime();
@@ -336,7 +337,7 @@
 
     <div class='clockdiv' id='clockdiv'>
       <h6>AKHIR</h6>
-      <div>
+    <div>
         <span class='days' id='dayba'></span>
         <div class='smalltext'>Hari</div>
     </div>
@@ -353,9 +354,8 @@
         <div class='smalltext'>Detik</div>
     </div>
     <center>
-      <p class='end-teks' id='mulaib'></p>
+      <p class='end-teks' id='mulaiba'></p>
     </center>
-    </div>
 
     <script>
     const bioa = new Date('october 04, 2022 09:29:59').getTime();
@@ -370,13 +370,13 @@
     document.getElementById('hourba').innerHTML = hoursba;
     document.getElementById('minuteba').innerHTML = minutesba;
     document.getElementById('secondba').innerHTML = secondsba;
-    if (tb < 0) {
+    if (tba < 0) {
             clearInterval(xba);
-            document.getElementById('mulaiba').innerHTML = 'UJIAN BIOLOGI DAH BERAKHIR!';
-            document.getElementById('dayba').innerHTML ='0';
-            document.getElementById('hourba').innerHTML ='0';
-            document.getElementById('minuteba').innerHTML ='0' ;
-            document.getElementById('secondba').innerHTML = '0'; }
+            document.getElementById('mulaib').innerHTML = 'UJIAN BIOLOGI DAH BERAKHIR!';
+            document.getElementById('dayb').innerHTML ='0';
+            document.getElementById('hourb').innerHTML ='0';
+            document.getElementById('minuteb').innerHTML ='0' ;
+            document.getElementById('secondb').innerHTML = '0'; }
     }, 1000);
     </script>
     </div>
@@ -673,48 +673,50 @@
     <div class='clockdiv' id='clockdiv'>
       <p>Akhir Ujian</p>
       <div>
-          <span class='days' id='dayiae'></span>
-          <div class='smalltext'>Hari</div>
-      </div>
-      <div>
-          <span class='hours' id='houriae'></span>
-          <div class='smalltext'>Jam</div>
-      </div>
-      <div>
-          <span class='minutes' id='minuteiae'></span>
-          <div class='smalltext'>Menit</div>
-      </div>
-      <div>
-          <span class='seconds' id='secondiae'></span>
-          <div class='smalltext'>Detik</div>
-      </div>
-      <center>
-        <p class='end-teks' id='mulaiiae'></p>
-      </center>
+        <span class='days' id='dayiak'></span>
+        <div class='smalltext'>Hari</div>
     </div>
+    <div>
+        <span class='hours' id='houriak'></span>
+        <div class='smalltext'>Jam</div>
+    </div>
+    <div>
+        <span class='minutes' id='minuteiak'></span>
+        <div class='smalltext'>Menit</div>
+    </div>
+    <div>
+        <span class='seconds' id='secondiak'></span>
+        <div class='smalltext'>Detik</div>
+    </div>
+    <center>
+      <p class='end-teks' id='mulaiiak'></p>
+    </center>
+  </div>
 
-      <script>
-      const ekoae = new Date('october 07, 2022 09:29:59').getTime();
-      var xiae = setInterval(function() {
-      var nowiae = new Date().getTime();
-      var tiae = ekoae - nowiae;
-      var daysiae = Math.floor(tiae / (1000 * 60 * 60 * 24));
-      var hoursiae = Math.floor((tiae %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
-      var minutesiae = Math.floor((tiae % (1000 * 60 * 60)) / (1000 * 60));
-      var secondsiae = Math.floor((tiae % (1000 * 60)) / 1000);
-      document.getElementById('dayiae').innerHTML = daysiae;
-      document.getElementById('houriae').innerHTML = hoursiae;
-      document.getElementById('minuteiae').innerHTML = minutesiae;
-      document.getElementById('secondiae').innerHTML = secondsiae;
-      if (tia < 0) {
-              clearInterval(xia);
-              document.getElementById('mulaiiae').innerHTML = 'COUNTDOWN DAH BERAKHIR, CONGRATS TO ALL! 🎉🎉';
-              document.getElementById('dayiae').innerHTML ='0';
-              document.getElementById('houriae').innerHTML ='0';
-              document.getElementById('minuteiae').innerHTML ='0' ;
-              document.getElementById('secondiae').innerHTML = '0'; }
-      }, 1000);
-      </script>
+    <script>
+    const ekoak = new Date('october 07, 2022 09:29:59').getTime();
+    var xiak = setInterval(function() {
+    var nowiak = new Date().getTime();
+    var tiak = ekoak - nowiak;
+    var daysiak = Math.floor(tiak / (1000 * 60 * 60 * 24));
+    var hoursiak = Math.floor((tiak %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutesiak = Math.floor((tiak % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsiak = Math.floor((tiak % (1000 * 60)) / 1000);
+    document.getElementById('dayiak').innerHTML = daysiak;
+    document.getElementById('houriak').innerHTML = hoursiak;
+    document.getElementById('minuteiak').innerHTML = minutesiak;
+    document.getElementById('secondiak').innerHTML = secondsiak;
+    if (tia < 0) {
+            clearInterval(xia);
+            document.getElementById('mulaiiak').innerHTML = 'COUNTDOWN TELAH BERAKHIR, CONGRATS TO ALL! 🎉🎉';
+            document.getElementById('dayiak').innerHTML ='0';
+            document.getElementById('houriak').innerHTML ='0';
+            document.getElementById('minuteiak').innerHTML ='0' ;
+            document.getElementById('secondiak').innerHTML = '0'; }
+    }, 1000);
+    </script>
+    </div>
+    <hr>
 
     <div class="credits">
       Dev by <a href="https://discordapp.com/users/759331054413938710/">Oxa</a> <img src='https://kkun.netlify.app/a/love.png' height='40'>
