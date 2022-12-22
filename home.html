@@ -14,6 +14,14 @@
     <link rel="shortcut icon" href="a/icon.png" type="image/x-icon" />
 
     <!--=============== CSS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'
+    />
     <link rel="stylesheet" href="./styles/styles.css" />
 
     <!--=============== TITLE ===============-->
@@ -24,38 +32,39 @@
   </head>
 
   <body>
-    <div class="conteudo">
-      <div class="lista__cards">
-        <button class="lista__cards__btn btn btn-esquerda">
-          <div class="icone">
+    <!-- partial:index.partial.html -->
+    <div class="app">
+      <div class="cardList">
+        <button class="cardList__btn btn btn--left">
+          <div class="icon">
             <svg>
-              <use xlink:href="#flexa-esquerda"></use>
+              <use xlink:href="#arrow-left"></use>
             </svg>
           </div>
         </button>
 
-        <div class="conteudo__cards">
-          <div class="card card--corrente">
-            <div class="imagem--card">
-              <img src="./imagens/ic-messi-bg.webp" />
+        <div class="cards__wrapper">
+          <div class="card current--card">
+            <div class="card__image">
+              <img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
             </div>
           </div>
 
-          <div class="card card--proximo">
-            <div class="imagem--card">
-              <img src="./imagens/ic-neymar-bg.webp" />
+          <div class="card next--card">
+            <div class="card__image">
+              <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
             </div>
           </div>
 
-          <div class="card card--anterior">
-            <div class="imagem--card">
-              <img src="./imagens/ic-mbappe-bg.webp" />
+          <div class="card previous--card">
+            <div class="card__image">
+              <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
             </div>
           </div>
         </div>
 
-        <button class="lista__cards__btn btn btn--direita">
-          <div class="icone">
+        <button class="cardList__btn btn btn--right">
+          <div class="icon">
             <svg>
               <use xlink:href="#arrow-right"></use>
             </svg>
@@ -63,48 +72,51 @@
         </button>
       </div>
 
-      <div class="listagem__informacoes">
-        <div class="conteudo__informacoes">
-          <div class="info informacoes__corrente">
-            <h1 class="texto nome">Argentina</h1>
-            <h4 class="texto localizacao">Messi</h4>
-            <p class="texto descricao">3 Gols</p>
+      <div class="infoList">
+        <div class="info__wrapper">
+          <div class="info current--info">
+            <h1 class="text name">Highlands</h1>
+            <h4 class="text location">Scotland</h4>
+            <p class="text description">The mountains are calling</p>
           </div>
 
-          <div class="info informacoes__seguinte">
-            <h1 class="texto nome">Brazil</h1>
-            <h4 class="texto localizacao">Neymar</h4>
-            <p class="texto descricao">1 Gol</p>
+          <div class="info next--info">
+            <h1 class="text name">Machu Pichu</h1>
+            <h4 class="text location">Peru</h4>
+            <p class="text description">Adventure is never far away</p>
           </div>
 
-          <div class="info informacoes__anterior">
-            <h1 class="texto nome">França</h1>
-            <h4 class="texto localizacao">Mbappe</h4>
-            <p class="texto descricao">5 gols</p>
+          <div class="info previous--info">
+            <h1 class="text name">Chamonix</h1>
+            <h4 class="text location">France</h4>
+            <p class="text description">Let your dreams come true</p>
           </div>
         </div>
       </div>
 
-      <div class="conteudo__background">
-        <div class="conteudo__backgorund__imagem imagem--corrente">
-          <img src="./imagens/ic-team-argentina.webp" alt="" />
+      <div class="app__bg">
+        <div class="app__bg__image current--image">
+          <img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
         </div>
-        <div class="conteudo__backgorund__imagem imagem--proxima">
-          <img src="./imagens/ic-team-brazil.webp" alt="" />
+        <div class="app__bg__image next--image">
+          <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
         </div>
-        <div class="conteudo__backgorund__imagem imagem--anterior">
-          <img src="./imagens/ic-team-france.webp" alt="" />
+        <div class="app__bg__image previous--image">
+          <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
         </div>
       </div>
     </div>
 
-    <div class="conteudo__carregamento">
-      <div class="carregamento"></div>
+    <div class="loading__wrapper">
+      <div class="loader--text">Loding...</div>
+      <div class="loader">
+        <span></span>
+      </div>
     </div>
 
-    <svg class="icones" style="display: none">
+    <svg class="icons" style="display: none">
       <symbol
-        id="flexa-esquerda"
+        id="arrow-left"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
       >
@@ -136,6 +148,15 @@
         />
       </symbol>
     </svg>
+
+    <div class="support">
+      <a href="https://twitter.com/DevLoop01" target="_blank"
+        ><i class="fab fa-twitter-square"></i
+      ></a>
+      <a href="https://dribbble.com/devloop01" target="_blank"
+        ><i class="fab fa-dribbble"></i
+      ></a>
+    </div>
 
     <!----------------- SCRIPT ----------------->
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
