@@ -1,31 +1,73 @@
-<html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <meta property='og:site_name' content='Home - IX-14'/>
-        <meta property='og:type' content='website'/>
-        <meta property='og:image' content='https://ix14.netlify.app/a/card.png'/>
-        <meta property='og:image:type' content='image/png'/>
-        <meta property='og:image:width' content='1280'/>
-        <meta property='og:image:height' content='800'/>
-        <meta property='twitter:card' content='summary_large_image' />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="Home - IX-14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ix14.netlify.app/a/card.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="twitter:card" content="summary_large_image" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel='shortcut icon' href='a/icon.png' type='image/x-icon'>
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="a/icon.png" type="image/x-icon" />
 
-        <!--=============== REMIX ICONS ===============-->
-        <link href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet'>
+    <!--=============== REMIX ICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-        <!--=============== CSS ===============-->
-        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor' crossorigin='anonymous'>
-        <link rel="stylesheet" href="css/">
+    <!--=============== CSS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
-        <!--=============== TITLE ===============-->
-        <title>Home - IX-14</title> 
+    <!--=============== TITLE ===============-->
+    <title>Home - IX-14</title>
 
-        <!--=============== FONT ===============-->
-        <link rel='preconnect' href='https://fonts.gstatic.com'>
+    <!--=============== FONT ===============-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
   </head>
-<body>
-</body>
+  <style>
+    .links > a {
+      color: #636b6f;
+      padding: 0 25px;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  </style>
+  <body>
+    <center>
+      <div class="container" style="padding-top: 100px">
+        <button type="button" class="btn btn-outline-dark" id="info">
+          Click Here!
+        </button>
+      </div>
+      <p></p>
+      <div class="links">
+        <p>copyright © 2023 • IX-14</p>
+      </div>
+    </center>
+    <!----------------- SCRIPT ----------------->
+    <script src="https://ix14.netlify.app/14k/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+      const btn = document.getElementById("info");
+      btn.addEventListener("click", function () {
+        Swal.fire({
+          title: "Maintenance!",
+          text: "This website is under maintenance.",
+          button: "OK",
+        });
+      });
+    </script>
+  </body>
 </html>
