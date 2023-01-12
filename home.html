@@ -47,7 +47,10 @@
       <script>
         var gugel = document.getElementById("input-google").value
         var gugel = 'https://www.google.com/search?q=' + gugel
-        window.location.href = gugel;
+
+        setTimeout(function(){
+          window.location.href = gugel;
+        }, 5000);
       </script>
     </form>
     <!----------------- SCRIPT ----------------->
