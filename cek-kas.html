@@ -1,0 +1,153 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="404 - IX 14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ix14.netlify.app/a/card.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="a/icon.png" type="image/x-icon" />
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' rel='stylesheet'>
+
+    <!--=============== CSS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="cek-kas.css" />
+
+    <!--=============== TITLE ===============-->
+    <title>Cek Uang Kas - IX-14</title>
+
+    <!--=============== FONT ===============-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,600"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    /* Google Font Link */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
+  <body>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <nav class="navbar navbar-expand-lg fixed-top static-top">
+        <div class="container px-5">
+            <a class="navbar-brand" href="">
+                <p class="display-6 fw-bold my-3">IX-14</p>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="display-7 my-3 ms-auto" style="color: black; text-decoration: none; size: 15px;">
+                    <i class="fa-brands fa-instagram" style="size: 200px;"></i> @ix14.agenda
+                </a>
+            </div>
+        </div>
+    </nav>
+
+      <section class="py-5 mt-5">
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="mb-3">
+          <label for="input-kelas" class="form-label">No Kelas</label>
+          <input type="number" class="form-control" id="input-kelas" placeholder="35" min="1" max="43" required>
+        </div>
+        <div class="mb-3">
+          <label for="kelas" class="form-label">Kelas</label>
+            <select id="kelas" name="kelas" class="form-control">
+              <option value="IX-14">IX-14</option>
+            </select>
+          </div>
+          <input type="submit" class="w-100 btn btn-primary" id="submit" name="submit" value="CEK">
+
+          <br><br>
+          <div class="mb-3">
+            <h6>INFO:</h6> <p id="warning"></p>
+          </div>
+        </div>
+      </form>
+
+      </section>
+  </div>
+        <script>
+          // Data uang kas
+          var dataUangKas = [
+            { kelas: "1", jumlah: 500000, terbayar: 300000 },
+
+          ];
+
+          // Function untuk mencari data uang kas berdasarkan nomor kelas
+          function cariDataUangKas(kelas) {
+            for (var i = 0; i < dataUangKas.length; i++) {
+              if (dataUangKas[i].kelas === kelas) {
+                return dataUangKas[i];
+              }
+            }
+            return null;
+          }
+
+          // Function untuk menampilkan popup rincian yang belum bayar
+          function tampilkanPopupRincian(kelas) {
+            var data = cariDataUangKas(kelas);
+            if (data !== null && data.terbayar < data.jumlah) {
+              alert(
+                "Anda belum membayar uang kas sebesar Rp" +
+                  (data.jumlah - data.terbayar)
+              );
+            } else {
+              alert("Anda sudah membayar uang kas semua.");
+            }
+          }
+
+          // Function untuk menangani submit form
+          function handleSubmit(event) {
+          event.preventDefault();
+          var inputKelas = document.getElementById("input-kelas").value;
+          var data = cariDataUangKas(inputKelas);
+          var warning = document.getElementById("warning");
+          if (data === null) {
+            warning.innerHTML = "<i>Oops, no kelas tidak ditemukan. Jika menu ini tidak berfungsi, silahkan hubungi bendahara.</i>";
+          } else if (data.terbayar < data.jumlah) {
+            warning.innerHTML = "<i>Kamu belum melunasi uang kas/uang dll, Harap menekan tombol dibawah agar mengetahui total yang harus dilunasi.</i>";
+
+            var warningDiv = document.createElement("div");
+            warningDiv.style.display = "flex";
+            warningDiv.style.flexDirection = "column";
+            warning.appendChild(warningDiv);
+
+            var btnRincian = document.createElement("button");
+            btnRincian.innerHTML = "TOTAL YANG HARUS DILUNASI";
+            btnRincian.classList.add("btn", "btn-primary");
+            btnRincian.addEventListener("click", function () {
+              tampilkanPopupRincian(inputKelas);
+            });
+            warningDiv.appendChild(btnRincian);
+          } else {
+            warning.innerHTML = "Bagus, kamu sudah melunasi semua uang kas/uang dll.";
+          }
+        }
+        </script>
+        <script src="https://portal-snpmb.bppp.kemdikbud.go.id/assets/plugins/bootstrap5/js/bootstrap.bundle.min.js"></script>
+      </body>
+</html>
