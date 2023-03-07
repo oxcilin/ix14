@@ -23,8 +23,6 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="cek-kas.css" />
-
     <!--=============== TITLE ===============-->
     <title>Cek Uang Kas - IX-14</title>
 
@@ -70,8 +68,8 @@
 
       <form onsubmit="handleSubmit(event)">
         <div class="mb-3">
-          <label for="input-kelas" class="form-label">No Kelas</label>
-          <input type="number" class="form-control" id="input-kelas" placeholder="35" min="1" max="43" required>
+          <label for="input-kelas" class="form-label">No Kelas:</label>
+          <input type="number" class="form-control" id="input-kelas" placeholder="35" min="1" required>
         </div>
         <div class="mb-3">
           <label for="kelas" class="form-label">Kelas</label>
@@ -82,72 +80,18 @@
           <input type="submit" class="w-100 btn btn-primary" id="submit" name="submit" value="CEK">
 
           <br><br>
-          <div class="mb-3">
-            <h6>INFO:</h6> <p id="warning"></p>
+          
+          <div class="alert alert-primary " role="alert">
+            <p>INFO:</p>
+            <hr>
+            <p id="warning">Belum Ada Status!</p>
           </div>
         </div>
       </form>
 
       </section>
   </div>
-        <script>
-          // Data uang kas
-          var dataUangKas = [
-            { kelas: "1", jumlah: 500000, terbayar: 300000 },
-
-          ];
-
-          // Function untuk mencari data uang kas berdasarkan nomor kelas
-          function cariDataUangKas(kelas) {
-            for (var i = 0; i < dataUangKas.length; i++) {
-              if (dataUangKas[i].kelas === kelas) {
-                return dataUangKas[i];
-              }
-            }
-            return null;
-          }
-
-          // Function untuk menampilkan popup rincian yang belum bayar
-          function tampilkanPopupRincian(kelas) {
-            var data = cariDataUangKas(kelas);
-            if (data !== null && data.terbayar < data.jumlah) {
-              alert(
-                "Anda belum membayar uang kas sebesar Rp" +
-                  (data.jumlah - data.terbayar)
-              );
-            } else {
-              alert("Anda sudah membayar uang kas semua.");
-            }
-          }
-
-          // Function untuk menangani submit form
-          function handleSubmit(event) {
-          event.preventDefault();
-          var inputKelas = document.getElementById("input-kelas").value;
-          var data = cariDataUangKas(inputKelas);
-          var warning = document.getElementById("warning");
-          if (data === null) {
-            warning.innerHTML = "<i>Oops, no kelas tidak ditemukan. Jika menu ini tidak berfungsi, silahkan hubungi bendahara.</i>";
-          } else if (data.terbayar < data.jumlah) {
-            warning.innerHTML = "<i>Kamu belum melunasi uang kas/uang dll, Harap menekan tombol dibawah agar mengetahui total yang harus dilunasi.</i>";
-
-            var warningDiv = document.createElement("div");
-            warningDiv.style.display = "flex";
-            warningDiv.style.flexDirection = "column";
-            warning.appendChild(warningDiv);
-
-            var btnRincian = document.createElement("button");
-            btnRincian.innerHTML = "TOTAL YANG HARUS DILUNASI";
-            btnRincian.classList.add("btn", "btn-primary");
-            btnRincian.addEventListener("click", function () {
-              tampilkanPopupRincian(inputKelas);
-            });
-            warningDiv.appendChild(btnRincian);
-          } else {
-            warning.innerHTML = "Bagus, kamu sudah melunasi semua uang kas/uang dll.";
-          }
-        }
-        </script>
+        <script src="cek-kas.js"></script>
         <script src="https://portal-snpmb.bppp.kemdikbud.go.id/assets/plugins/bootstrap5/js/bootstrap.bundle.min.js"></script>
       </body>
 </html>
