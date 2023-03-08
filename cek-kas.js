@@ -24,11 +24,11 @@ var dataUangKas = [
   { kelas: "23", jumlah: 357000, terbayar: 428000 },
   { kelas: "24", jumlah: 357000, terbayar: 302000 },
   { kelas: "25", jumlah: 357000, terbayar: 357000 }, // HARVANY DAH LUNAS
-  { kelas: "260", jumlah: 357000, terbayar: 419000 },
+  { kelas: "26", jumlah: 357000, terbayar: 419000 },
   { kelas: "27", jumlah: 357000, terbayar: 373500 },
   { kelas: "28", jumlah: 357000, terbayar: 357000 },
   { kelas: "29", jumlah: 357000, terbayar: 357000 },
-  { kelas: "30", jumlah: 357000, terbayar: 343000 }, // { kelas:"30 ", jumlah: 357000,terbayar: 356000 }
+  { kelas: "30", jumlah: 357000, terbayar: 347000 }, // { kelas:"30 ", jumlah: 357000,terbayar: 356000 }
   { kelas: "31", jumlah: 357000, terbayar: 345000 }, // { kelas: "31", jumlah: 357000, terbayar: 364000 },
   { kelas: "32", jumlah: 357000, terbayar: 374000 },
   { kelas: "33", jumlah: 357000, terbayar: 357000 },
