@@ -1,0 +1,192 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="Acara - IX 14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ix14.netlify.app/a/card.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="htpps://ix14.netlfy.app/a/icon.png"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIX ICONS ===============-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!--=============== TITLE ===============-->
+    <title>Acara - IX 14</title>
+
+    <!--=============== FONT ===============-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,600"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
+  <body>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <nav class="navbar navbar-expand-lg fixed-top static-top">
+        <div class="container px-5">
+          <a class="navbar-brand" href="">
+            <p class="display-6 fw-bold my-3">IX-14</p>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a
+              class="display-7 my-3 ms-auto"
+              style="color: black; text-decoration: none; size: 15px"
+            >
+              <i class="fa-brands fa-instagram" style="size: 200px"></i>
+              @ix14.agenda
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <section class="py-5 mt-5">
+        <!-- nokel -->
+        <div class="mb-3 row">
+          <label for="nokel" class="col-sm-2 col-form-label">No Kelas</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="classNo" required />
+          </div>
+        </div>
+        <!-- nama -->
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-2 col-form-label">Nama</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="name"
+              required
+            />
+          </div>
+        </div>
+        <!-- kelas -->
+        <div class="mb-3 row">
+          <label for="class" class="col-sm-2 col-form-label">Kelas</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="class"
+              required
+            />
+          </div>
+        </div>
+        <!-- nominal -->
+        <div class="mb-3 row">
+          <label for="nominal" class="col-sm-2 col-form-label">Nominal</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="nominal"
+              required
+            />
+          </div>
+        </div>
+        <!-- status -->
+        <div class="mb-3 row">
+          <label for="status" class="col-sm-2 col-form-label">Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="status"
+              required
+            />
+          </div>
+        </div>
+
+        <button
+          class="btn btn-primary btn-lg px-4 gap-3"
+          type="button"
+          onclick="fillDetails()"
+          style="display: none"
+          id="detailsButton"
+        ></button>
+
+        <div class="d-flex flex-column flex-md-row gap-3">
+          <button
+            id="printButton"
+            class="w-100 btn btn-outline-dark"
+            onclick="printDetails()"
+          >
+            Print Information
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!--=============== JS ===============-->
+    <script src="acara.js"></script>
+    <script>
+      function fillDetails() {
+        var classNo = document.getElementById("classNo").value;
+        if (classNo == "35") {
+          document.getElementById("name").value = "ORLANDO EDWARD ONGAH";
+          document.getElementById("class").value = "IX-14";
+          document.getElementById("nominal").value = "Rp. 150,000";
+          document.getElementById("status").value = "Already Paid";
+        } else {
+          alert("Invalid class number.");
+        }
+      }
+    </script>
+    <script>
+      document
+        .getElementById("classNo")
+        .addEventListener("keypress", function (event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("detailsButton").click();
+          }
+        });
+    </script>
+  </body>
+</html>
