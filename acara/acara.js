@@ -54,7 +54,7 @@ function printDetails() {
     "<br>" +
     "   .  __________________  .";
 
-  var printWindow = window.open("", "_blank");
+  var printWindow = window.open("", "#");
   printWindow.document.write(
     "<html><head><style>body { font-family: Consolas; font-size: 12px; }</style></head><body>" +
       details +
