@@ -24,7 +24,10 @@
     />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/main-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://ix14.netlify.app/assets/css/main-page.css"
+    />
 
     <!--=============== TITLE ===============-->
     <title>Cek Kas • IX-14</title>
@@ -56,19 +59,12 @@
           <!-- Banner -->
           <section>
             <header class="major">
-              <h2>Sorry, this page isn't available.</h2>
+              <h2>Cek Tagihan Uang Kas</h2>
             </header>
             <form onsubmit="handleSubmit(event)">
-              <div class="mb-3">
+              <div class="col-6 col-12-xsmall">
                 <label for="input-kelas" class="form-label">No Kelas:</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="input-kelas"
-                  placeholder="35"
-                  min="1"
-                  required
-                />
+                <input type="text" id="input-kelas" placeholder="35" />
               </div>
               <div class="mb-3">
                 <label for="kelas" class="form-label">Kelas</label>
@@ -76,9 +72,10 @@
                   <option value="IX-14">IX-14</option>
                 </select>
               </div>
+              <br />
               <input
                 type="submit"
-                class="w-100 btn btn-primary"
+                class="button primary fit"
                 id="submit"
                 name="submit"
                 value="CEK"
@@ -88,7 +85,6 @@
 
               <div class="alert alert-primary" role="alert">
                 <p>INFO:</p>
-                <hr />
                 <p id="warning">Belum Ada Status!</p>
               </div>
             </form>
@@ -129,11 +125,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main-page.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/jquery.min.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/browser.min.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/breakpoints.min.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/util.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/main-page.js"></script>
     <script src="cek-kas.js"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:site_name" content="Acara - IX 14" />
+    <meta property="og:site_name" content="Cek Kas - IX 14" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://ix14.netlify.app/a/card.png" />
     <meta property="og:image:type" content="image/png" />
@@ -13,7 +13,7 @@
     <!--=============== FAVICON ===============-->
     <link
       rel="shortcut icon"
-      href="htpps://ix14.netlfy.app/a/icon.png"
+      href="https://ix14.netlify.app/a/icon.png"
       type="image/x-icon"
     />
 
@@ -25,14 +25,12 @@
 
     <!--=============== CSS ===============-->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
+      href="https://ix14.netlify.app/assets/css/main-page.css"
     />
 
     <!--=============== TITLE ===============-->
-    <title>Acara - IX 14</title>
+    <title>Cek Kas • IX-14</title>
 
     <!--=============== FONT ===============-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -41,129 +39,161 @@
       rel="stylesheet"
     />
   </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <center>
+              <img
+                style="max-width: 200px; max-height: 100px"
+                src="https://ix14.netlify.app/Logo Files/For Web/png/Color logo - no background.png"
+                alt="IX-14 Logo"
+              />
+            </center>
+          </header>
 
-  <style>
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-  </style>
+          <!-- Banner -->
+          <section>
+            <header class="major">
+              <h2>Cek Tagihan Uang Kas</h2>
+            </header>
+            <form>
+              <!-- nokel -->
+              <div class="col-6 col-12-xsmall">
+                <label for="nokel" class="col-sm-2 col-form-label"
+                  >No Kelas</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="classNo"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- nama -->
+              <div class="col-6 col-12-xsmall">
+                <label for="name" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control-plaintext"
+                    id="name"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- kelas -->
+              <div class="col-6 col-12-xsmall">
+                <label for="class" class="col-sm-2 col-form-label">Kelas</label>
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control-plaintext"
+                    id="class"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- nominal -->
+              <div class="col-6 col-12-xsmall">
+                <label for="nominal" class="col-sm-2 col-form-label"
+                  >Nominal</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control-plaintext"
+                    id="nominal"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- status -->
+              <div class="col-6 col-12-xsmall">
+                <label for="status" class="col-sm-2 col-form-label"
+                  >Status</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control-plaintext"
+                    id="status"
+                    required
+                  />
+                </div>
+              </div>
 
-  <body>
-    <div class="col-lg-8 mx-auto p-3 py-md-5">
-      <nav class="navbar navbar-expand-lg fixed-top static-top">
-        <div class="container px-5">
-          <a class="navbar-brand" href="">
-            <p class="display-6 fw-bold my-3">IX-14</p>
-          </a>
+              <br />
+              <button
+                class="button primary fit"
+                type="button"
+                onclick="fillDetails()"
+                style="display: none"
+                id="detailsButton"
+              ></button>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+              <div class="d-flex flex-column flex-md-row gap-3">
+                <button
+                  id="printButton"
+                  class="button primary fit"
+                  onclick="printDetails()"
+                >
+                  Print Information
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a
-              class="display-7 my-3 ms-auto"
-              style="color: black; text-decoration: none; size: 15px"
-            >
-              <i class="fa-brands fa-instagram" style="size: 200px"></i>
-              @ix14.agenda
-            </a>
-          </div>
-        </div>
-      </nav>
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li><a href="home">Homepage</a></li>
+              <li><a href="https://ix14.netlify.app/#intro">Intro</a></li>
+              <li><a href="https://ix14.netlify.app/#member">Member</a></li>
+              <li><a href="https://ix14.netlify.app/#spotify">Spotify</a></li>
+              <li>
+                <a
+                  href="https://www.instagram.com/ix14.agenda/"
+                  class="icon brands fa-instagram"
+                >
+                  Instagram</a
+                >
+              </li>
+            </ul>
+          </nav>
 
-      <section class="py-5 mt-5">
-        <!-- nokel -->
-        <div class="mb-3 row">
-          <label for="nokel" class="col-sm-2 col-form-label">No Kelas</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="classNo" required />
-          </div>
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; IX-14</p>
+          </footer>
         </div>
-        <!-- nama -->
-        <div class="mb-3 row">
-          <label for="name" class="col-sm-2 col-form-label">Nama</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              readonly
-              class="form-control-plaintext"
-              id="name"
-              required
-            />
-          </div>
-        </div>
-        <!-- kelas -->
-        <div class="mb-3 row">
-          <label for="class" class="col-sm-2 col-form-label">Kelas</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              readonly
-              class="form-control-plaintext"
-              id="class"
-              required
-            />
-          </div>
-        </div>
-        <!-- nominal -->
-        <div class="mb-3 row">
-          <label for="nominal" class="col-sm-2 col-form-label">Nominal</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              readonly
-              class="form-control-plaintext"
-              id="nominal"
-              required
-            />
-          </div>
-        </div>
-        <!-- status -->
-        <div class="mb-3 row">
-          <label for="status" class="col-sm-2 col-form-label">Status</label>
-          <div class="col-sm-10">
-            <input
-              type="text"
-              readonly
-              class="form-control-plaintext"
-              id="status"
-              required
-            />
-          </div>
-        </div>
-
-        <button
-          class="btn btn-primary btn-lg px-4 gap-3"
-          type="button"
-          onclick="fillDetails()"
-          style="display: none"
-          id="detailsButton"
-        ></button>
-
-        <div class="d-flex flex-column flex-md-row gap-3">
-          <button
-            id="printButton"
-            class="w-100 btn btn-outline-dark"
-            onclick="printDetails()"
-          >
-            Print Information
-          </button>
-        </div>
-      </section>
+      </div>
     </div>
 
-    <!--=============== JS ===============-->
+    <!-- Scripts -->
+    <script src="https://ix14.netlify.app/assets/js/jquery.min.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/browser.min.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/breakpoints.min.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/util.js"></script>
+    <script src="https://ix14.netlify.app/assets/js/main-page.js"></script>
     <script src="acara.js"></script>
     <script>
       function fillDetails() {
