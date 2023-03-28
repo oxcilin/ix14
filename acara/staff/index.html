@@ -59,7 +59,7 @@
           <!-- Banner -->
           <section>
             <header class="major">
-              <h2>Cek Tagihan Uang Kas</h2>
+              <h2>Acara</h2>
             </header>
             <form>
               <!-- nokel -->
@@ -137,9 +137,11 @@
               <button
                 class="button primary fit"
                 type="button"
-                onclick="fillDetails()"
+                onclick="printTemplates()"
                 id="detailsButton"
-              ></button>
+              >
+                Print Information
+              </button>
 
               <div class="d-flex flex-column flex-md-row gap-3">
                 <button
@@ -194,7 +196,7 @@
     <script src="https://ix14.netlify.app/assets/js/breakpoints.min.js"></script>
     <script src="https://ix14.netlify.app/assets/js/util.js"></script>
     <script src="https://ix14.netlify.app/assets/js/main-page.js"></script>
-    <script src="acara.js"></script>
+    <script src="https://ix14.netlify.app/acara/acara.js"></script>
     <script>
       function fillDetails() {
         var classNo = document.getElementById("classNo").value;
