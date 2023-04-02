@@ -380,64 +380,31 @@
             <br />
             <hr />
 
-            <h3>Saran</h3>
-            <p>Berikan orang yang di force kick sebesar Rp 300.000:</p>
+            <h3>fyi</h3>
+            <dl>
+              <dt>Alasan Utama Kenapa Beberapa Orang Tidak Mau Mengikuti</dt>
+              <dd>
+                <p>
+                  ada "seseorang" yg kayak gimana gt, kalau blg gt entar slh
+                  kalau g di blg, entar slh juga, jadi ga tau mau blg apa lg
+                </p>
+              </dd>
 
-            <form>
-              <input
-                type="radio"
-                id="setuju"
-                name="persetujuan"
-                value="setuju"
-              />
-              <label for="setuju">Setuju</label><span id="persen_setuju"></span
-              ><br />
-              <input
-                type="radio"
-                id="tidak_setuju"
-                name="persetujuan"
-                value="tidak_setuju"
-              />
-              <label for="tidak_setuju">Tidak Setuju</label
-              ><span id="persen_tidak_setuju"></span><br />
-            </form>
-
-            <script>
-              // Function untuk menampilkan persentase setuju dan tidak setuju saat dipilih
-              function tampilkanPersentase() {
-                // Ambil elemen input radio
-                var setuju = document.getElementById("setuju");
-                var tidak_setuju = document.getElementById("tidak_setuju");
-
-                // Ambil elemen span untuk menampilkan persentase
-                var persen_setuju = document.getElementById("persen_setuju");
-                var persen_tidak_setuju = document.getElementById(
-                  "persen_tidak_setuju"
-                );
-
-                // Hitung persentase setuju dan tidak setuju
-                var total =
-                  parseInt(persen_setuju.innerHTML) +
-                  parseInt(persen_tidak_setuju.innerHTML);
-                var persen_setuju_hitung =
-                  (parseInt(persen_setuju.innerHTML) / total) * 100;
-                var persen_tidak_setuju_hitung =
-                  (parseInt(persen_tidak_setuju.innerHTML) / total) * 100;
-
-                // Tampilkan persentase setuju dan tidak setuju di samping pilihan
-                persen_setuju.innerHTML =
-                  " (" + persen_setuju_hitung.toFixed(1) + "%)";
-                persen_tidak_setuju.innerHTML =
-                  " (" + persen_tidak_setuju_hitung.toFixed(1) + "%)";
-              }
-
-              // Tambahkan event listener untuk memanggil function tampilkanPersentase saat pilihan berubah
-              var setuju = document.getElementById("setuju");
-              setuju.addEventListener("change", tampilkanPersentase);
-
-              var tidak_setuju = document.getElementById("tidak_setuju");
-              tidak_setuju.addEventListener("change", tampilkanPersentase);
-            </script>
+              <dt>Jumlah Orang Yang Datang</dt>
+              <dd>
+                <p>
+                  kalau misalnya bener bener yang tidak mau datang ad 11 org
+                  <bold>(contoh)</bold> jadi gmn ya rayain tanpa 11 orang ini,
+                  kalau rayain entar dia gmn lah
+                </p>
+              </dd>
+            </dl>
+            <blockquote style="visibility: hidden">
+              kami sebagai pk tidak memaksa untuk mengikuti agenda ini, tapi
+              kami merasa agak sedikit disalahin dalam beberapa hal, dan kami
+              juga tidak ingin ada yang merasa tidak dihargai, jadi kami
+              memutuskan untuk ___________________ agenda ini.
+            </blockquote>
           </section>
         </div>
       </div>
