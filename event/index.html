@@ -54,6 +54,8 @@
     }
     ::selection {
       background-color: white;
+      color: #000;
+      border-radius: 50%;
     }
     input[type="number"]::-webkit-outer-spin-button,
     input[type="number"]::-webkit-inner-spin-button {
@@ -135,7 +137,26 @@
                     placeholder="No Kelas"
                     aria-label="No Kelas"
                     required
+                    oninput="validateNoKelasInput()"
                   />
+                  <script>
+                    function validateNoKelasInput() {
+                      var input = document.getElementById("No Kelas");
+                      if (input.value < 1 || input.value > 43) {
+                        Swal.fire({
+                          title: "Invalid value",
+                          text: "No Kelas harus di antara 1 dan 43, dikarenakan di dalam kelas cuma ada 43 orang.",
+                          icon: "warning",
+                          confirmButtonText: "OK",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            input.value = "";
+                          }
+                        });
+                      }
+                    }
+                  </script>
+
                   <hr />
                   <div class="col">
                     <input
@@ -170,7 +191,7 @@
 
                   <div class="d-flex flex-column flex-md-row gap-3">
                     <button type="submit" class="w-100 btn btn-outline-light">
-                      Submit
+                      ✈️
                     </button>
                   </div>
                 </div>
