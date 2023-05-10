@@ -83,7 +83,7 @@ function handleSubmit(event) {
       "<i>Oops, no kelas tidak ditemukan. Jika menu ini tidak berfungsi, silahkan hubungi bendahara.</i>";
   } else if (data.terbayar < data.jumlah) {
     warning.innerHTML =
-      "<i>Kamu belum melunasi uang kas/uang dll, Harap menekan tombol dibawah agar mengetahui total yang harus dilunasi. </br></i>";
+      "<i>Kamu belum melunasi uang kas/uang dll, Harap menekan tombol dibawah agar mengetahui total yang harus dilunasi.</i>";
 
     var warningDiv = document.createElement("div");
     warningDiv.style.display = "flex";
