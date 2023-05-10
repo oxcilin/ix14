@@ -8,18 +8,18 @@ var dataUangKas = [
   { kelas: "7", jumlah: 357000, terbayar: 387000 },
   { kelas: "8", jumlah: 357000, terbayar: 375000 },
   { kelas: "9", jumlah: 357000, terbayar: 384000 },
-  { kelas: "10", jumlah: 357000, terbayar: 365500 },
+  { kelas: "10", jumlah: 357000, terbayar: 357000 },
   { kelas: "11", jumlah: 357000, terbayar: 360000 },
-  { kelas: "12", jumlah: 357000, terbayar: 355000 }, // { kelas:"12 ", jumlah: 357000,terbayar: 360000 }
+  { kelas: "12", jumlah: 357000, terbayar: 357000 }, // { kelas:"12 ", jumlah: 357000,terbayar: 360000 }
   { kelas: "13", jumlah: 357000, terbayar: 360000 },
   { kelas: "14", jumlah: 357000, terbayar: 360000 },
   { kelas: "15", jumlah: 357000, terbayar: 378000 },
   { kelas: "16", jumlah: 357000, terbayar: 405000 },
   { kelas: "17", jumlah: 357000, terbayar: 357000 },
   { kelas: "18", jumlah: 357000, terbayar: 426000 },
-  { kelas: "19", jumlah: 357000, terbayar: 366000 },
+  { kelas: "19", jumlah: 357000, terbayar: 357000 },
   { kelas: "20", jumlah: 357000, terbayar: 359000 },
-  { kelas: "21", jumlah: 357000, terbayar: 332000 }, // { kelas: "21", jumlah: 357000, terbayar: 337000 },
+  { kelas: "21", jumlah: 357000, terbayar: 357000 }, // { kelas: "21", jumlah: 357000, terbayar: 337000 },
   { kelas: "22", jumlah: 357000, terbayar: 360000 },
   { kelas: "23", jumlah: 357000, terbayar: 428000 },
   { kelas: "24", jumlah: 357000, terbayar: 302000 },
@@ -28,20 +28,20 @@ var dataUangKas = [
   { kelas: "27", jumlah: 357000, terbayar: 373500 },
   { kelas: "28", jumlah: 357000, terbayar: 357000 },
   { kelas: "29", jumlah: 357000, terbayar: 357000 },
-  { kelas: "30", jumlah: 357000, terbayar: 347000 }, // { kelas:"30 ", jumlah: 357000,terbayar: 356000 }
-  { kelas: "31", jumlah: 357000, terbayar: 345000 }, // { kelas: "31", jumlah: 357000, terbayar: 364000 },
+  { kelas: "30", jumlah: 357000, terbayar: 357000 }, // { kelas:"30 ", jumlah: 357000,terbayar: 356000 }
+  { kelas: "31", jumlah: 357000, terbayar: 357000 }, // { kelas: "31", jumlah: 357000, terbayar: 364000 },
   { kelas: "32", jumlah: 357000, terbayar: 374000 },
   { kelas: "33", jumlah: 357000, terbayar: 357000 },
   { kelas: "34", jumlah: 357000, terbayar: 357000 },
   { kelas: "35", jumlah: 357000, terbayar: 368000 },
   { kelas: "36", jumlah: 357000, terbayar: 485000 },
   { kelas: "37", jumlah: 357000, terbayar: 368000 },
-  { kelas: "38", jumlah: 357000, terbayar: 323000 }, // { kelas: "38", jumlah: 357000, terbayar: 334000 },
+  { kelas: "38", jumlah: 357000, terbayar: 357000 }, // { kelas: "38", jumlah: 357000, terbayar: 334000 },
   { kelas: "39", jumlah: 357000, terbayar: 360000 },
   { kelas: "40", jumlah: 357000, terbayar: 372000 },
   { kelas: "41", jumlah: 357000, terbayar: 366000 },
   { kelas: "42", jumlah: 357000, terbayar: 363000 },
-  { kelas: "43", jumlah: 357000, terbayar: 331000 }, // { kelas: "43", jumlah: 357000, terbayar: 333000 },
+  { kelas: "43", jumlah: 357000, terbayar: 357000 }, // { kelas: "43", jumlah: 357000, terbayar: 333000 },
 ];
 
 // Function untuk mencari data uang kas berdasarkan nomor kelas
