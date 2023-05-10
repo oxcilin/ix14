@@ -42,6 +42,7 @@ var dataUangKas = [
   { kelas: "41", jumlah: 357000, terbayar: 366000 },
   { kelas: "42", jumlah: 357000, terbayar: 363000 },
   { kelas: "43", jumlah: 357000, terbayar: 357000 }, // { kelas: "43", jumlah: 357000, terbayar: 333000 },
+  { kelas: "12345", jumlah: 357000, terbayar: 0 },
 ];
 
 // Function untuk mencari data uang kas berdasarkan nomor kelas
