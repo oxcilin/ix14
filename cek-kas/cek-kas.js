@@ -22,7 +22,7 @@ var dataUangKas = [
   { kelas: "21", jumlah: 357000, terbayar: 357000 }, // { kelas: "21", jumlah: 357000, terbayar: 337000 },
   { kelas: "22", jumlah: 357000, terbayar: 360000 },
   { kelas: "23", jumlah: 357000, terbayar: 428000 },
-  { kelas: "24", jumlah: 357000, terbayar: 302000 },
+  { kelas: "24", jumlah: 357000, terbayar: 357000 },
   { kelas: "25", jumlah: 357000, terbayar: 357000 }, // HARVANY DAH LUNAS
   { kelas: "26", jumlah: 357000, terbayar: 419000 },
   { kelas: "27", jumlah: 357000, terbayar: 373500 },
