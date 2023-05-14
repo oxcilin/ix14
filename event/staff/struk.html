@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Struk Pembayaran</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 150px;
+        height: auto;
+      }
+      .label {
+        display: inline-block;
+        width: 100px;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      .value {
+        display: inline-block;
+        width: 150px;
+        margin-right: 10px;
+        text-align: right;
+      }
+      .total {
+        font-weight: bold;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="logo"
+      src="https://ix14.netlify.app/Logo%20Files/For%20Web/png/Color%20logo%20-%20no%20background.png"
+    />
+    <div class="title">Struk Pembayaran</div>
+    <div class="label">Pesanan:</div>
+    <div class="value">Barang 1 - Rp. 100.000</div>
+    <div class="label"></div>
+    <div class="value">Barang 2 - Rp. 150.000</div>
+    <div class="label"></div>
+    <div class="label">Charge:</div>
+    <div class="value">Subtotal - Rp. 250.000</div>
+    <div class="label"></div>
+    <div class="value">PPN - Rp. 25.000</div>
+    <div class="label"></div>
+    <div class="value">Service Charge - Rp. 50.000</div>
+    <div class="label"></div>
+    <div class="value total">Total Pembayaran - Rp. 325.000</div>
+    <div class="value total">PM: QRIS_GP</div>
+    <div class="label" id="clock"></div>
+    <div class="footer">
+      <div>Informasi Pelanggan:</div>
+      <div>Nama: John Doe</div>
+      <div>Alamat: Jalan Raya 123</div>
+      <div>Telepon: 08123456789</div>
+      <div>Terima kasih telah berkunjung!</div>
+    </div>
+
+    <br />
+    <svg class="barcode"></svg>
+
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/barcodes/JsBarcode.all.min.js"></script>
+    <script>
+      // Generate barcode using JsBarcode library
+      var barcode = document.querySelector(".barcode");
+      JsBarcode(barcode, "1234567890", {
+        format: "PDF417",
+        displayValue: false,
+        height: 50,
+        margin: 0,
+        lineColor: "#000",
+        background: "#fff",
+        textMargin: 0,
+        fontSize: 0,
+        text: "Additional Text",
+        textPosition: "bottom",
+      });
+    </script>
+    <script>
+      window.print();
+    </script>
+
+    <script>
+      function updateClock() {
+        const clock = document.getElementById("clock");
+        const now = new Date();
+
+        const daysOfWeek = [
+          "Minggu",
+          "Senin",
+          "Selasa",
+          "Rabu",
+          "Kamis",
+          "Jumat",
+          "Sabtu",
+        ];
+        const dayOfWeek = daysOfWeek[now.getDay()];
+
+        const date = now.getDate();
+
+        const months = [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember",
+        ];
+        const month = months[now.getMonth()];
+
+        let hour = now.getHours();
+        const ampm = hour >= 12 ? "PM" : "AM";
+        hour = hour % 12;
+        hour = hour ? hour : 12;
+
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const timeString = `${hour}:${minutes
+          .toString()
+          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${ampm}`;
+        const dateString = `${dayOfWeek}, ${date} ${month}`;
+
+        clock.innerHTML = `${dateString}; ${timeString}`;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>

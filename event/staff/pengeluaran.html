@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Struk Pembayaran</title>
+
+    <style>
+      body {
+        width: 45mm;
+        font-family: Consolas;
+        font-size: 12px;
+      }
+      .kolom {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .baris {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .kolom-nama {
+        font-size: 13px;
+        flex-basis: 60%; /* Mengatur lebar kolom nama barang */
+      }
+
+      .kolom-harga {
+        font-size: 9px;
+        flex-basis: 40%; /* Mengatur lebar kolom harga barang */
+        text-align: left; /* Mengatur text alignment harga barang ke kanan */
+      }
+      .kolom-detail {
+        font-size: 9px;
+      }
+      .judul {
+        margin: 0;
+        padding: 0;
+      }
+      .judul h2,
+      .judul h5 {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="printable-content" id="printable-content">
+      <center>
+        <div class="judul">
+          <h2>LIST PENGELUARAN</h2>
+          <h5>EVENT IX-14</h5>
+        </div>
+      </center>
+      <hr />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">AWAL</div>
+          <div class="kolom-harga">IDR 1.136.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">Uang Kas</div>
+        </div>
+      </div>
+      <hr />
+      <center>
+        <h3>SHOPEE</h3>
+      </center>
+      <hr />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">TOD card</div>
+          <div class="kolom-harga">IDR 34.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">1 pcs x IDR 34.000</div>
+        </div>
+      </div>
+      <br />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Biaya Admin</div>
+          <div class="kolom-harga">IDR 1.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">1 transkasi x 1.000</div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">IDR 35.000</div>
+          <div class="kolom-harga">IDR 1.101.000</div>
+        </div>
+      </div>
+      <hr />
+      <center>
+        <h3>LOTTE MART - CP</h3>
+      </center>
+      <hr />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Plastik Cup</div>
+          <div class="kolom-harga">IDR 10.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">2 pcs x IDR 5.000</div>
+        </div>
+      </div>
+      <br />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Zakku (tusuk)</div>
+          <div class="kolom-harga">IDR 37.900</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">1 pcs x IDR 37.900</div>
+        </div>
+      </div>
+      <br />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Kantongan</div>
+          <div class="kolom-harga">IDR 300</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">1 pcs x IDR 300</div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">IDR 48.200</div>
+          <div class="kolom-harga">IDR 1.052.800</div>
+        </div>
+      </div>
+
+      <hr />
+      <center>
+        <h3>HYPERMART - SUN</h3>
+      </center>
+      <hr />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Arang (1,5 kg)</div>
+          <div class="kolom-harga">IDR 37.900</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">1 pcs x IDR 37.900</div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">IDR 37.900</div>
+          <div class="kolom-harga">IDR 1.014.900</div>
+        </div>
+      </div>
+
+      <hr />
+      <center>
+        <h3>PASAR - SUKARAME</h3>
+      </center>
+      <hr />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Ayam (fillet)</div>
+          <div class="kolom-harga">IDR 270.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">5 kg x IDR 54.000</div>
+        </div>
+      </div>
+      <br />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Bumbu marinasi</div>
+          <div class="kolom-harga">IDR 20.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">2 pcs x IDR 10.000</div>
+        </div>
+      </div>
+      <br />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Jagung</div>
+          <div class="kolom-harga">IDR 50.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">7 kg x IDR -</div>
+        </div>
+      </div>
+
+      <br />
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">Kentang</div>
+          <div class="kolom-harga">IDR 50.000</div>
+        </div>
+        <div class="baris">
+          <div class="kolom-detail">5kg x IDR 10.000</div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="kolom">
+        <div class="baris">
+          <div class="kolom-nama">IDR 390.000</div>
+          <div class="kolom-harga">IDR 624.900</div>
+        </div>
+      </div>
+    </div>
+
+    <center>
+      .
+      <br />
+      <p style="font-size: 10px">
+        <span id="tanggal"></span> <span id="jam"></span>
+      </p>
+    </center>
+
+    <script>
+      // Menampilkan tanggal dan jam
+      function updateClock() {
+        var now = new Date();
+        var tanggal =
+          now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+        var jam =
+          now.getHours() +
+          ":" +
+          (now.getMinutes() < 10 ? "0" : "") +
+          now.getMinutes() +
+          ":" +
+          (now.getSeconds() < 10 ? "0" : "") +
+          now.getSeconds();
+        document.getElementById("tanggal").innerHTML = tanggal;
+        document.getElementById("jam").innerHTML = jam;
+      }
+
+      // Memperbarui waktu setiap detik dan menghasilkan barcode setiap 5 detik
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+
+  <script>
+    function printContent() {
+      var printContents =
+        document.getElementById("printable-content").innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      var printWindow = window.open("", "PRINT", "height=400,width=600");
+
+      printWindow.document.write(
+        "<html><head><title>" + document.title + "</title>"
+      );
+      printWindow.document.write("</head><body>");
+      printWindow.document.write(printContents);
+      printWindow.document.write("</body></html>");
+
+      printWindow.document.close(); // necessary for IE >= 10
+      printWindow.focus(); // necessary for IE >= 10*/
+
+      // set kertas cetak dengan lebar 58mm
+      printWindow.print();
+      printWindow.close();
+
+      document.body.innerHTML = originalContents;
+    }
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"
+  ></script>
+</html>
